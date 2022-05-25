@@ -1,0 +1,59 @@
+<!-- 搜索结果页 -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>用户首页</title>
+    </head>
+    <!-- 未登录状态-->
+    <body> 
+        <!-- 首页顶部菜单，有 HOME(返回首页)，登录()，我的（个人主页），博客(博客论坛)-->
+        <div>
+            <fieldset>
+                <a href ="/all_books">首页</a> 
+                <a href ="/personal/{{uid}}">我的</a>
+                <a href ="/blogs.html">博客</a> 
+                <a href ="/user/conectus">联系我们</a>
+                <a href ="/all_books">退出登录</a>
+                <p align="right"> {{uid}}号用户{{uname}} , 欢迎搜索！</p>
+            </fieldset>
+        </div>
+
+        <!-- 书籍搜索结果 -->
+        <div>
+            <fieldset>
+                <legend>书籍列表:</legend>
+                <table  border="1">
+                    <tr>
+                        <th>编号</th>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>ISBN</th>
+                        <th>拥有者</th>
+                        <th>详情</th>
+                    </tr>
+                    {{#book}}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{name}}</td>
+                                <td>{{author}}</td>
+                                <td>{{isbn}}</td>
+                                <td>{{owner}}</td>
+                                <td><a href ="/book/{{id}}/{{uid}}">详情</a></td>
+                            </tr>
+                        
+                    {{/book}}
+                </table>
+            </fieldset>
+        </div>
+
+        <br>
+        <!--开发者信息 杂项信息-->
+        <div>
+            <fieldset>
+                <legend>开发者列表:</legend>
+
+            </fieldset>
+        </div>
+        
+    </body>       
+</html>

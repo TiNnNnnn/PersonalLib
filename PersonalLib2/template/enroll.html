@@ -1,0 +1,34 @@
+<!-- 注册页面 -->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>注册页面</title>
+    </head>
+
+    <body> 
+        <form action="/enroll" method="POST">
+            <fieldset>
+                <legend>注册基本信息:</legend>
+                <p>欢迎您的注册！</p>
+                用户名:<input type="text" name="uname">
+                <br>
+                电话:<input type="tel" name="phone">
+                <br>
+                邮箱:<input type="email" name="email">
+                <br>
+                地址:<input type="text" name="address">
+                <br>
+                密码:<input type="password" name="passwd">
+                <br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>个人简单介绍:</legend>
+                <p>"快向小伙伴们介绍自己吧!"</p>
+                <textarea type="text" name="desc" rows=30 cols=100 >写点东西吧</textarea>
+                <input type="submit" value="提交">
+            </fieldset>
+        </form>
+    </body>       
+</html>

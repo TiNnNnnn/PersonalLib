@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>用户首页</title>
+    </head>
+    <!-- 未登录状态-->
+    <body> 
+        <!-- 首页顶部菜单，有 HOME(返回首页)，登录()，我的（个人主页），博客(博客论坛)-->
+        <div>
+            <fieldset>
+                <a href ="/all_books">首页</a> 
+                <a href ="/login.html">我的</a> 
+                <a href ="/blogs.html">博客</a> 
+                <a href ="/user/conectus">联系我们</a>
+                <a  href ="/login.html">登录</a> 
+                <a href ="/enroll.html">注册</a> 
+            </fieldset>
+        </div>
+
+        <br>
+        <!-- 首页搜索部分，搜索之后跳转到结果页面-->
+        <div>
+            <fieldset>
+                <legend>搜索你想要的书籍:</legend>
+                <form action="/login.html">
+                     <input type="text" name="serach" rows=30 cols=100>
+                     <input type="submit" value="提交">
+                </form>
+               
+            </fieldset>
+        <div>
+        <br>
+        <div>
+            <fieldset>
+                <legend>书籍列表:</legend>
+                <table  border="1">
+                    <tr>
+                        <th>编号</th>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>ISBN</th>
+                        <th>拥有者</th>
+                        <th>详情</th>
+                    </tr>
+                    {{#book}}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{name}}</td>
+                                <td>{{author}}</td>
+                                <td>{{isbn}}</td>
+                                <td>{{owner}}</td>
+                                <td><a href ="/login.html">详情</a></td>
+                            </tr>
+                        
+                    {{/book}}
+                </table>
+            </fieldset>
+        </div>
+
+        <br>
+        <!--开发者信息 杂项信息-->
+        <div>
+            <fieldset>
+                <legend>开发者列表:</legend>
+
+            </fieldset>
+        </div>
+        
+    </body>       
+</html>

@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>书籍详情页</title>
+    </head>
+
+    <body> 
+        <div>{{id}} | {{name}} | {{author}} | {{isbn}} | {{owner}}</div>
+        <div>
+            <p>书籍状态：<font size="5" color={{color}}>{{islend}}</font></p> 
+        </div>
+        <div><pre>{{img}}</pre></div> <!-- 书籍介绍 -->
+        
+        <img src="../book_data/1/img.jpg" width="128" height="128" />
+        <div><pre>{{desc}}</pre></div> <!-- 书籍介绍 -->
+        <br><br>
+        <a href="/borrow/{{id}}/{{uid}}">点我借阅</a>
+        <!-- <form action="/borrow/{{id}}/{{uid}}" method="GET">
+            <input type="submit" value="借阅">
+        </form> -->
+        <br><br>
+        <div>
+            <fieldset>
+                <legend>评论区:</legend>
+                <form action="/comment/{{id}}/{{uid}}" method="POST">
+                    <fieldset>
+                        <textarea type="text" name="comments" rows=3 cols=100 ></textarea>
+                        <input type="submit" value="评论" style="overflow: hidden">
+                    </fieldset>
+                </form>
+
+                <table border="1">
+                    <ul>
+                        {{#comm}}
+
+                            <fieldset>
+                                    <iframe  width=0 height=0 frameborder=0 id="myiframe" name="myiframe"></iframe>
+                                    <legend ><font size="3" color={{color2}}>{{responser}} {{respondent}} {{ctime}} </font></legend>
+                                    {{content}}
+                                    <p align="right">
+                                        <form action="/comment/{{id}}/{{uid}}/{{responser}}" method="POST">
+                                            <textarea type="text" name="comments" rows=1 cols=0 ></textarea>
+                                            <input type="submit" value="回复" style="overflow: hidden">
+                                        </form>
+                                        
+                                    </p>
+                            </fieldset>
+                        {{/comm}}
+                    </ul>
+                </table>
+            <fieldset>
+        </div>
+    </body>       
+</html>

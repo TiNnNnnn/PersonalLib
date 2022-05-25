@@ -1,0 +1,45 @@
+<!--
+ 用户上传书籍时的信息
+-->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{name}}的书籍上传页</title>
+    </head>
+
+    <body> 
+        
+        <form action="/uploadbook/{{id}}" enctype="multipart/form-data" method="POST">
+            <fieldset>
+                <legend>书籍基本信息:</legend>
+                <p>{{id}}号用户 {{name}},提交前请核对信息是否正确</p>
+                书籍名称:<input type="text" name="bname" >
+                <br>
+                书籍作者:<input type="text" name="author">
+                <br>
+                ISBN号:<input type="text" name="isbn" value="不少于10位">
+                <br>
+                期望书籍借阅时限:<input type="text" name="lendtime" value="一般不少于10日">
+                <br>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>书籍简单介绍:</legend>
+                <p>"快向小伙伴们安利这本书吧！"</p>
+                <textarea type="text" name="desc" rows=30 cols=100 >{{header}}</textarea>
+                <input type="submit" value="提交"><INPUT type="reset">
+            </fieldset>
+        </form>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

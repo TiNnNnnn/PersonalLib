@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{name}}的主页</title>
+    </head>
+
+    <body> 
+        <div>
+            <fieldset>
+                <legend>{{uname}}的基本信息:</legend>
+                ID号:   {{uid}} <br>  
+                用户名: {{uname}}<br>
+                手机号：{{phone}}<br>
+                地址：  {{address}}<br>
+                邮箱：  {{email}}<br>
+                图片：  {{img}}<br>
+                用户简介：<pre>{{desc}}</pre>
+               <a href="#"> 我的私信</a>
+            </fieldset>
+       </div>
+       <div>
+           <fieldset>
+                <legend>{{uname}}的书库:</legend>
+                <a href="/upload/{{uid}}">上传新的书籍</a>| <a href="#">下架书籍</a>| <a href="#">修改书籍信息</a>
+                <table  border="1">
+                    <tr>
+                        <th>编号</th>
+                        <th>书名</th>
+                        <th>作者</th>
+                        <th>ISBN</th>
+                        <th>详情</th>
+                    </tr>
+                    {{#book}}
+                            <tr>
+                                <td>{{id}}</td>
+                                <td>{{name}}</td>
+                                <td>{{author}}</td>
+                                <td>{{isbn}}</td>
+                                <td><a href ="/book/{{id}}/{{uid}}">详情</a></td>
+                            </tr>
+                        
+                    {{/book}}
+                </table>
+            </fieldset>
+       </div>
+
+       
+       <div>
+        <fieldset>
+            <legend>{{uname}}的借出列表:</legend>
+            <table  border="1">
+                <tr>
+                    <th>编号</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>ISBN</th>
+                    <th>借出时间</th>
+                    <th>预计归还时间</th>
+                    <th>详情</th>
+                </tr>
+
+                {{#lbook}}
+                        <tr>
+                            <td>{{lid}}</td>
+                            <td>{{lname}}</td>
+                            <td>{{lauthor}}</td>
+                            <td>{{lisbn}}</td>
+                            <td>{{lborrow_time}}</td>
+                            <td>{{lback_time}}</td>
+                            <td><a href ="/book/{{lid}}/{{uid}}">详情</a></td>
+                         
+                            
+                        </tr>
+                {{/lbook}}
+            </table>
+        </fieldset>
+       </div>
+
+       <div>
+        <fieldset>
+            <legend>{{uname}}的已借列表:</legend>
+            <table  border="1">
+                <tr>
+                    <th>编号</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>ISBN</th>
+                    <th>借出时间</th>
+                    <th>预计归还时间</th>
+                    <th>详情</th>
+                    <th>归还</th>
+                    
+                </tr>
+                {{#bbook}}
+                        <tr>
+                            <td>{{bid}}</td>
+                            <td>{{bname}}</td>
+                            <td>{{bauthor}}</td>
+                            <td>{{bisbn}}</td>
+                            <td>{{bborrow_time}}</td>
+                            <td>{{bback_time}}</td>
+                            <td><a href ="/book/{{bid}}/{{uid}}">详情</a></td>
+                            <td><a href ="/back/{{bid}}/{{uid}}">归还</a></td>
+                        </tr>
+                {{/bbook}}
+            </table>
+        </fieldset>
+       </div>
+    
+    </body>       
+</html>
